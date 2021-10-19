@@ -123,6 +123,11 @@ nil."
   (interactive)
   (npm-mode--exec-process "npm init"))
 
+(defun npm-mode-npm-clean-install ()
+  "Run the npm ci command."
+  (interactive)
+  (npm-mode--exec-process "npm ci"))
+
 (defun npm-mode-npm-install ()
   "Run the 'npm install' command."
   (interactive)
@@ -175,6 +180,7 @@ nil."
 (defvar npm-mode-command-keymap
   (let ((map (make-sparse-keymap)))
     (define-key map "n" 'npm-mode-npm-init)
+    (define-key map "c" 'npm-mode-npm-clean-install)
     (define-key map "i" 'npm-mode-npm-install)
     (define-key map "s" 'npm-mode-npm-install-save)
     (define-key map "d" 'npm-mode-npm-install-save-dev)
